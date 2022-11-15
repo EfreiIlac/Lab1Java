@@ -47,14 +47,14 @@ public class Main {
     group.add(basic);
 
     JButton submitButton = new JButton("submit");
-    JButton btn2 = new JButton("reset");
+    JButton resetButton = new JButton("reset");
 
     JLabel outputName = new JLabel("");
     JLabel outputEmail = new JLabel("");
     JLabel outputAddress = new JLabel("");
     JLabel outputMembership = new JLabel("");
 
-    // add action to the button
+    // add action to the submit button
     submitButton.addActionListener(e -> {
       // change the output
       outputName.setText("Name :" +firstName.getText() + " " + lastName.getText());
@@ -67,6 +67,21 @@ public class Main {
       } else if (basic.isSelected()) {
         outputMembership.setText("Membership :" +basic.getText());
       }
+      frame.setVisible(true);
+    });
+    // add action to the reset button
+    resetButton.addActionListener(e -> {
+      // change the output
+      firstName.setText("");
+      lastName.setText("");
+      email.setText("");
+      address.setText("");
+      city.setText("");
+      province.setText("");
+      outputName.setText("");
+      outputEmail.setText("");
+      outputAddress.setText("");
+      outputMembership.setText("");
       frame.setVisible(true);
     });
 
@@ -92,7 +107,7 @@ public class Main {
     mainPanel.add(province);
 
     mainPanel.add(submitButton);
-    mainPanel.add(btn2);
+    mainPanel.add(resetButton);
     mainPanel.add(premium);
     mainPanel.add(standard);
     mainPanel.add(basic);
